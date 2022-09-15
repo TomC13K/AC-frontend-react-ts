@@ -1,5 +1,6 @@
 import React, {FC, useEffect, useState} from "react";
 import { CalendarService } from "../../services/calendar.service";
+import { StyledButton } from './styles-calendar';
 
 
 const CalendarDayComponent: FC=()=> {
@@ -21,7 +22,7 @@ const CalendarDayComponent: FC=()=> {
 
     return (
         <>
-            <button onClick={getDayBookings}>Show bookings for a Day</button>
+            <StyledButton onClick={getDayBookings}>Show bookings for a Day</StyledButton>
             <div> Booking ID : {dayBookings.id}</div>
             <div>Booking Name : { dayBookings.bookingName}</div>
         </>
