@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from "react";
 import { CalendarService } from "../../services/calendar.service";
-import { StyledButton } from './styles-calendar';
+import { StyledButton } from './calendar.styled';
 
 
 const CalendarDayComponent: FC=()=> {
