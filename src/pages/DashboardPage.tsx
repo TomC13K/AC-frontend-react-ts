@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-//import AppRouter from '../AppRouter';
+import AppRouter from '../AppRouter';
 import SideLayoutComponent from '../components/layout/SideLayoutComponent';
 import TopLayoutComponent from '../components/layout/TopLayoutComponent';
 
@@ -26,9 +26,7 @@ function DashboardPage() {
       <TopLayoutComponent />
       <Container>
         <SideLayoutComponent />
-        {/* //TODO pass component to render here when change route */}
-        {/* <AppRouter/> */}
-        <p>lalalala</p>
+        <AppRouter/>
       </Container>
     </Layout>
   );

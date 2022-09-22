@@ -10,18 +10,15 @@ import StkPage from './pages/StkPage';
 
 function AppRouter() {
   return (
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="objednavky" element={<BookingPage />} />
-        <Route path="aircon" element={<AirconPage />} />
-        <Route
-          path="automatickePrevodovky"
-          element={<AutomaticGearboxPage />}
-        />
-        <Route path="pneu" element={<PneuPage />} />
-        <Route path="zaznamy" element={<RecordsPage />} />
-        <Route path="stk" element={<StkPage />} />
-      </Routes>
+    <Routes>
+      <Route path="." element={<DashboardPage />} />
+      <Route path="objednavky" element={<BookingPage />} />
+      <Route path="aircon" element={<AirconPage />} />
+      <Route path="automatickePrevodovky" element={<AutomaticGearboxPage />} />
+      <Route path="pneu" element={<PneuPage />} />
+      <Route path="zaznamy" element={<RecordsPage />} />
+      <Route path="stk" element={<StkPage />} />
+    </Routes>
   );
 }
 

@@ -1,15 +1,12 @@
 import React from 'react';
-import './App.css';
-import AppRouter from './AppRouter';
 import DashboardPage from './pages/DashboardPage';
-
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <DashboardPage/>
-      <AppRouter/>
-    </>
+    <BrowserRouter>
+      <DashboardPage />
+    </BrowserRouter>
   );
 }
 

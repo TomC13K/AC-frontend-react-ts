@@ -22,6 +22,9 @@ const Button = styled.button`
   &:hover {
     background-color: #3d4a7a;
   }
+  &.active {
+    background: #494f67;
+  }
 `;
 
 const ButtonContainer = styled.div`
