@@ -11,7 +11,6 @@ const SideLayout = styled.div`
 `;
 
 const Button = styled.button`
-  //border: 2px solid yellow;
   padding: 0.5em;
   margin: 0.5em 0 0;
   font-weight: 500;
@@ -42,10 +41,9 @@ function SideLayoutComponent() {
   return (
     <SideLayout>
       <ButtonContainer>
-        <Button onClick={() => navigate('/')}>DashBoard</Button>
-        <Button onClick={() => navigate('/objednavky')}>Bookings</Button>
-        <Button onClick={() => navigate('/aircon')}>Aircon Refill</Button>
-              {/* <Link to='/objednavky'><button>Bookings</button></Link> */}
+        <Button onClick={() => navigate('.')}>DashBoard</Button>
+        <Button onClick={() => navigate('objednavky')}>Bookings</Button>
+        <Button onClick={() => navigate('aircon')}>Aircon Refill</Button>
       </ButtonContainer>
     </SideLayout>
   );
