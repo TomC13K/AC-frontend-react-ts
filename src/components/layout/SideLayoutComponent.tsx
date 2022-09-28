@@ -1,6 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate, Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+
+function SideLayoutComponent() {
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language:string) => {
+    i18n.changeLanguage(language);
+  }
+
+  return (
+    <SideLayout>
+      <ButtonContainer>
+        <Button onClick={() => navigate('.')}>{t('btnDashboard')}</Button>
+        <Button onClick={() => navigate('objednavky')}>{t('btnBooking')}</Button>
+        <Button onClick={() => navigate('aircon')}>{t('btnAirconRefill')}</Button>
+        <Button onClick={() => changeLanguage('en')}>Eng</Button>
+        <Button onClick={() => changeLanguage('sk')}>SK</Button>
+      </ButtonContainer>
+    </SideLayout>
+  );
+}
 
 const SideLayout = styled.div`
   background: #1e253f;
@@ -34,19 +56,5 @@ const ButtonContainer = styled.div`
   flex-direction: column;
   margin: 0 2em;
 `;
-
-function SideLayoutComponent() {
-  const navigate = useNavigate();
-
-  return (
-    <SideLayout>
-      <ButtonContainer>
-        <Button onClick={() => navigate('.')}>DashBoard</Button>
-        <Button onClick={() => navigate('objednavky')}>Bookings</Button>
-        <Button onClick={() => navigate('aircon')}>Aircon Refill</Button>
-      </ButtonContainer>
-    </SideLayout>
-  );
-}
 
 export default SideLayoutComponent;
