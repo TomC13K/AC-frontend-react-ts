@@ -1,8 +1,10 @@
 {
-    "btnDashboard":"Dashboard",
-    "btnAirconRefill":"Aircon refill",
-    "btnBooking":"Booking",
-    "nested":{
-        "text1":"nested text1"
+    "sideLayout": {
+        "btnDashboard": "Dashboard",
+        "btnAirconRefill": "Aircon refill",
+        "btnBooking": "Booking",
+        "nested": {
+            "text1": "nested text1"
+        }
     }
 }

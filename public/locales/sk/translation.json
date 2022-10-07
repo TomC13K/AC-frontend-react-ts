@@ -1,8 +1,10 @@
 {
-    "btnDashboard": "Pracovna plocha",
-    "btnAirconRefill": "Plnenie klimy",
-    "btnBooking": "Objednavky",
-    "nested": {
-        "text1": "vnutri texct lalala"
+    "sideLayout": {
+        "btnDashboard": "Pracovna plocha",
+        "btnAirconRefill": "Plnenie klimy",
+        "btnBooking": "Objednavky",
+        "nested": {
+            "text1": "vnutri texct lalala"
+        }
     }
 }

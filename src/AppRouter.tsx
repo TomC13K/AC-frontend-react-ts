@@ -7,11 +7,13 @@ import PneuPage from './pages/PneuPage';
 import RecordsPage from './pages/RecordsPage';
 import StkPage from './pages/StkPage';
 import CalendarDayComponent from './components/calendar/CalendarDayComponent';
+import DashboardComponent from './components/dashboard/DashboardComponent';
 
 function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<CalendarDayComponent />} />
+      {/* <Route path="/" element={<CalendarDayComponent />} /> */}
+      <Route path="/" element={<DashboardComponent />} />
       <Route path="objednavky" element={<BookingPage />} />
       <Route path="aircon" element={<AirconPage />} />
       <Route path="automatickePrevodovky" element={<AutomaticGearboxPage />} />

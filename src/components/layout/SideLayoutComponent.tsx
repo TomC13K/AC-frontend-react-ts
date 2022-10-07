@@ -10,12 +10,14 @@ function SideLayoutComponent() {
   return (
     <SideLayout>
       <ButtonContainer>
-        <Button onClick={() => navigate('.')}>{t('btnDashboard')}</Button>
+        <Button onClick={() => navigate('.')}>
+          {t('sideLayout.btnDashboard')}
+        </Button>
         <Button onClick={() => navigate('objednavky')}>
-          {t('btnBooking')}
+          {t('sideLayout.btnBooking')}
         </Button>
         <Button onClick={() => navigate('aircon')}>
-          {t('btnAirconRefill')}
+          {t('sideLayout.btnAirconRefill')}
         </Button>
       </ButtonContainer>
     </SideLayout>
@@ -26,8 +28,8 @@ const SideLayout = styled.div`
   background: #1e253f;
   color: white;
   font-weight: 500;
-  width: 20em;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `;
 
 const Button = styled.button`
@@ -47,12 +49,12 @@ const Button = styled.button`
 `;
 
 const ButtonContainer = styled.div`
-  //border: 2px solid red;
   width: auto;
   background-color: inherit;
   display: flex;
   flex-direction: column;
   margin: 0 2em;
+  align-items: flex-start;
 `;
 
 export default SideLayoutComponent;
