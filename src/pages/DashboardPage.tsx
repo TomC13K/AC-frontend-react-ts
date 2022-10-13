@@ -27,7 +27,7 @@ function DashboardPage() {
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
-  background: #494f67;
+  //background: #30475e;
   color: black;
   font-weight: 500;
   align-items: stretch;
@@ -35,7 +35,7 @@ const Layout = styled.div`
 `;
 
 const Container = styled.div`
-  background: #494f67;
+  background: #30475e;
   display: flex;
   flex-direction: row;
   font-weight: 500;

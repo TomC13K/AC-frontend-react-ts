@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { FC} from 'react';
+import NewCustomerForm from '../forms/NewCustomerForm';
 import styled from 'styled-components';
 
-function DashboardComponent() {
+const DashboardComponent: FC = () => {
   return (
     <>
-     <h3>Dashboard component</h3>
-
+      <h3>Dashboard component</h3>
+      <NewCustomerForm/>
     </>
   );
 }

@@ -6,5 +6,18 @@
         "nested": {
             "text1": "vnutri texct lalala"
         }
+    },
+    "customerForm": {
+        "firstName": "Meno",
+        "lastName": "Priezvisko",
+        "businessName": "Nazov firmy",
+        "phone": "Telefon",
+        "emailName": "Email",
+        "ico": "ICO",
+        "dic": "DIC",
+        "street": "Ulica",
+        "town": "Mesto",
+        "psc": "PSC",
+        "notes": "Poznamky"
     }
 }
