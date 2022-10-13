@@ -6,5 +6,18 @@
         "nested": {
             "text1": "nested text1"
         }
+    },
+    "customerForm": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "businessName": "Business Name",
+        "phone": "Phone",
+        "emailName": "Email",
+        "ico": "ICO",
+        "dic": "DIC",
+        "street": "Street",
+        "town": "Town",
+        "psc": "Postcode",
+        "notes": "Notes"
     }
 }
