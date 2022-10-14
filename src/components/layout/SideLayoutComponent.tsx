@@ -10,15 +10,10 @@ function SideLayoutComponent() {
   return (
     <SideLayout>
       <ButtonContainer>
-        <Button onClick={() => navigate('.')}>
-          {t('sideLayout.btnDashboard')}
-        </Button>
-        <Button onClick={() => navigate('objednavky')}>
-          {t('sideLayout.btnBooking')}
-        </Button>
-        <Button onClick={() => navigate('aircon')}>
-          {t('sideLayout.btnAirconRefill')}
-        </Button>
+        <Button onClick={() => navigate('.')}>{t('sideLayout.btnDashboard')}</Button>
+        <Button onClick={() => navigate('objednavky')}>{t('sideLayout.btnBooking')}</Button>
+        <Button onClick={() => navigate('aircon')}>{t('sideLayout.btnAirconRefill')}</Button>
+        <Button onClick={() => navigate('demo')}>component DEMO PAGE</Button>
       </ButtonContainer>
     </SideLayout>
   );
