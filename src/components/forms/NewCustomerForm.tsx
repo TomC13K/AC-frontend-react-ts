@@ -7,20 +7,9 @@ import { theme, TextFieldDefault } from './form-styles';
 import { ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
+import ICustomerFormInputs from "../../dataTypes/ICustomerDataType";
+import customerDataService from '../../services/customerData.service';
 
-interface ICustomerFormInputs {
-  firstName: string;
-  lastName: string;
-  businessName: string;
-  phone: string;
-  emailName: string;
-  ico: string;
-  dic: string;
-  street: string;
-  town: string;
-  psc: string;
-  notes: string;
-}
 
 //TODO add notes to DB
 
@@ -39,16 +28,16 @@ const customerSchema = yup.object().shape({
   ico: yup
     .string()
     .nullable()
-    .optional()
-    .min(6)
-    .max(8),
+    .optional(),
+    //.min(6)
+    //.max(8),
   dic: yup
     .string()
     .nullable()
-    .optional()
-    .matches(/^[0-9]+$/, 'Must be only digits')
-    .min(5, 'Must be exactly 5 digits')
-    .max(5, 'Must be exactly 5 digits'),
+    .optional(),
+    //.matches(/^[0-9]+$/, 'Must be only digits')
+    //.min(5, 'Must be exactly 5 digits')
+    //.max(5, 'Must be exactly 5 digits'),
   street: yup.string().notRequired(),
   town: yup.string().notRequired(),
   psc: yup.string().notRequired(),
@@ -74,6 +63,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
   const formSubmitHandler: SubmitHandler<ICustomerFormInputs> = (
     formData: ICustomerFormInputs
   ) => {
+    customerDataService.create(formData);
     console.log('form data ', formData);
   };
 
