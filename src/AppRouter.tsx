@@ -8,6 +8,7 @@ import RecordsPage from './pages/RecordsPage';
 import StkPage from './pages/StkPage';
 import CalendarDayComponent from './components/calendar/CalendarDayComponent';
 import DashboardComponent from './components/dashboard/DashboardComponent';
+import DemoPage from './pages/DemoPage';
 
 function AppRouter() {
   return (
@@ -20,6 +21,7 @@ function AppRouter() {
       <Route path="pneu" element={<PneuPage />} />
       <Route path="zaznamy" element={<RecordsPage />} />
       <Route path="stk" element={<StkPage />} />
+      <Route path="demo" element={<DemoPage />} />
     </Routes>
   );
 }
