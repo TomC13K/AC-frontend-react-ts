@@ -2,14 +2,13 @@ import React, { FC } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Button, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 import { theme, TextFieldDefault } from './form-styles';
 import { ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
-import ICustomerFormInputs from "../../dataTypes/ICustomerDataType";
+import ICustomerFormInputs from '../../dataTypes/ICustomerDataType';
 import customerDataService from '../../services/customerData.service';
-
 
 //TODO add notes to DB
 
@@ -29,42 +28,38 @@ const customerSchema = yup.object().shape({
     .string()
     .nullable()
     .optional(),
-    //.min(6)
-    //.max(8),
+  //.min(6)
+  //.max(8),
   dic: yup
     .string()
     .nullable()
     .optional(),
-    //.matches(/^[0-9]+$/, 'Must be only digits')
-    //.min(5, 'Must be exactly 5 digits')
-    //.max(5, 'Must be exactly 5 digits'),
+  //.matches(/^[0-9]+$/, 'Must be only digits')
+  //.min(5, 'Must be exactly 5 digits')
+  //.max(5, 'Must be exactly 5 digits'),
   street: yup.string().notRequired(),
   town: yup.string().notRequired(),
   psc: yup.string().notRequired(),
 });
 
-export interface INewCustomerForm { }
+export interface INewCustomerForm {}
 
-const NewCustomerForm: FC<INewCustomerForm> = (props) => {
+const NewCustomerForm: FC<INewCustomerForm> = props => {
   const { t } = useTranslation();
 
   const {
     control,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm<ICustomerFormInputs>({
     resolver: yupResolver(customerSchema),
   });
 
-  //console.log('errors ', errors);
-  //console.log('watch first name ', watch('firstName'));
-
-  const formSubmitHandler: SubmitHandler<ICustomerFormInputs> = (
-    formData: ICustomerFormInputs
-  ) => {
+  const onSubmit: SubmitHandler<ICustomerFormInputs> = (formData: ICustomerFormInputs) => {
     customerDataService.create(formData);
-    console.log('form data ', formData);
+    //after submit clear form
+    reset();
   };
 
   return (
@@ -74,7 +69,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           Form custom h1 style
         </Typography>
       </ThemeProvider>
-      <form onSubmit={handleSubmit(formSubmitHandler)}>
+      <form>
         <Controller
           name="firstName"
           defaultValue=""
@@ -112,15 +107,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           name="phone"
           defaultValue=""
           control={control}
-          render={({ field }) => (
-            <TextFieldDefault
-              {...field}
-              label={t('customerForm.phone')}
-              variant="standard"
-              error={!!errors.businessName}
-              helperText={errors.phone ? errors.phone.message : ''}
-            />
-          )}
+          render={({ field }) => <TextFieldDefault {...field} label={t('customerForm.phone')} variant="standard" error={!!errors.businessName} helperText={errors.phone ? errors.phone.message : ''} />}
         />
         <p></p>
         <Controller
@@ -128,13 +115,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           defaultValue=""
           control={control}
           render={({ field }) => (
-            <TextFieldDefault
-              {...field}
-              label={t('customerForm.emailName')}
-              variant="standard"
-              error={!!errors.businessName}
-              helperText={errors.emailName ? errors.emailName.message : ''}
-            />
+            <TextFieldDefault {...field} label={t('customerForm.emailName')} variant="standard" error={!!errors.businessName} helperText={errors.emailName ? errors.emailName.message : ''} />
           )}
         />
         <p></p>
@@ -149,9 +130,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
               label={t('customerForm.businessName')}
               variant="filled"
               error={!!errors.businessName}
-              helperText={
-                errors.businessName ? errors.businessName.message : ''
-              }
+              helperText={errors.businessName ? errors.businessName.message : ''}
             />
           )}
         />
@@ -161,14 +140,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           defaultValue=""
           control={control}
           render={({ field }) => (
-            <TextFieldDefault
-              {...field}
-              style={{ width: 150 }}
-              label={t('customerForm.ico')}
-              variant="outlined"
-              error={!!errors.businessName}
-              helperText={errors.ico ? errors.ico.message : ''}
-            />
+            <TextFieldDefault {...field} style={{ width: 150 }} label={t('customerForm.ico')} variant="outlined" error={!!errors.businessName} helperText={errors.ico ? errors.ico.message : ''} />
           )}
         />
         <p></p>
@@ -177,14 +149,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           defaultValue=""
           control={control}
           render={({ field }) => (
-            <TextFieldDefault
-              {...field}
-              label={t('customerForm.dic')}
-              style={{ width: 150 }}
-              variant="outlined"
-              error={!!errors.businessName}
-              helperText={errors.dic ? errors.dic.message : ''}
-            />
+            <TextFieldDefault {...field} label={t('customerForm.dic')} style={{ width: 150 }} variant="outlined" error={!!errors.businessName} helperText={errors.dic ? errors.dic.message : ''} />
           )}
         />
         <p></p>
@@ -209,14 +174,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           defaultValue=""
           control={control}
           render={({ field }) => (
-            <TextFieldDefault
-              {...field}
-              style={{ width: 350 }}
-              label={t('customerForm.town')}
-              variant="outlined"
-              error={!!errors.businessName}
-              helperText={errors.town ? errors.town.message : ''}
-            />
+            <TextFieldDefault {...field} style={{ width: 350 }} label={t('customerForm.town')} variant="outlined" error={!!errors.businessName} helperText={errors.town ? errors.town.message : ''} />
           )}
         />
         <p></p>
@@ -225,14 +183,7 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           defaultValue=""
           control={control}
           render={({ field }) => (
-            <TextFieldDefault
-              {...field}
-              style={{ width: 150 }}
-              label={t('customerForm.psc')}
-              variant="outlined"
-              error={!!errors.businessName}
-              helperText={errors.psc ? errors.psc.message : ''}
-            />
+            <TextFieldDefault {...field} style={{ width: 150 }} label={t('customerForm.psc')} variant="outlined" error={!!errors.businessName} helperText={errors.psc ? errors.psc.message : ''} />
           )}
         />
         <p></p>
@@ -254,9 +205,9 @@ const NewCustomerForm: FC<INewCustomerForm> = (props) => {
           )}
         />
         <p></p>
-        <input type="submit" />
-        {/* <Button onClick={handleSubmit(onSubmit)}>Submit</Button> */}
-        {/* <Button type="submit" >Submit</Button> */}
+        <Button variant="contained" onClick={handleSubmit(onSubmit)}>
+          Add New Customer
+        </Button>
       </form>
     </>
   );
