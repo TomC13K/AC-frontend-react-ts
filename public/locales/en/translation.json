@@ -19,5 +19,30 @@
         "town": "Town",
         "psc": "Postcode",
         "notes": "Notes"
+    },
+    "vehicleForm": {
+        "vehicleMake": "Vehicle Make",
+        "vehicleModel": "Vehicle Model",
+        "vehicleType": "Vehicle Type",
+        "spz": "Plate number",
+        "enginePower": "Engine power",
+        "vehicleCode": "Vehicle Code",
+        "yearMake": "Year make",
+        "vin": "VIN number",
+        "color": "Color",
+        "hasAircon": "Has Aircon ?",
+        "isHybrid": "Is hybrid ?",
+        "isElectric": "Is Electric ?",
+        "airconCoolerType": "Aircon cooler type",
+        "airconFillAmount": "Aircon fill amount",
+        "stkEndDate": "MOT expiration date",
+        "ekEndDate": "Emissions expiration date",
+        "hasAutomaticGearbox": "Has automatic gearbox ?",
+        "automaticGearboxDataID": "Automatic gearbox data ID",
+        "automaticGearboxOilType": "Automatic gerabox oil type",
+        "automaticGearboxOilAmount": "Automatic gearbox oil amount",
+        "engineOilType": "Engine oil type",
+        "engineOilAmount": "Engine oil amount ",
+        "dashDistance": "Dashboard mileage"
     }
 }

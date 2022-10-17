@@ -19,5 +19,30 @@
         "town": "Mesto",
         "psc": "PSC",
         "notes": "Poznamky"
+    },
+    "vehicleForm": {
+        "vehicleMake": "Vyrobca",
+        "vehicleModel": "Model",
+        "vehicleType": "Typ",
+        "spz": "SPZ",
+        "enginePower": "Vykon motora",
+        "vehicleCode": "Kod motora",
+        "yearMake": "Rok vyroby",
+        "vin": "VIN cislo",
+        "color": "Farba",
+        "hasAircon": "Klima ?",
+        "isHybrid": "Hybrid ?",
+        "isElectric": "Electricke ?",
+        "airconCoolerType": "Typ chladiva v klime",
+        "airconFillAmount": "Mnozstvo plniva klimy",
+        "stkEndDate": "STK datum platnosti",
+        "ekEndDate": "EK datum platnosti",
+        "hasAutomaticGearbox": "Automaticka prevodovka ?",
+        "automaticGearboxDataID": "ID cislo dat k automatickej prevodovke",
+        "automaticGearboxOilType": "Typ oleja v automatickej prevodovke",
+        "automaticGearboxOilAmount": "Mnozstvo oleja v automatickej prevodovke",
+        "engineOilType": "Typ motoroveho oleja",
+        "engineOilAmount": "Mnozstvo motoroveho oleja",
+        "dashDistance": "CElkove kilometre na tachu"
     }
 }

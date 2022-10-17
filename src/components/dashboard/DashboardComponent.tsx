@@ -6,7 +6,6 @@ const DashboardComponent: FC = () => {
   return (
     <>
       <h3>Dashboard component</h3>
-      <NewCustomerForm/>
     </>
   );
 }

@@ -1,12 +1,44 @@
+import { Button } from '@mui/material';
+import React, { FC } from 'react';
+import { useState } from 'react';
+import NewCustomerForm from '../components/forms/NewCustomerForm';
+import NewVehicleForm from '../components/forms/NewVehicleForm';
 
-import React from 'react';
+const DemoPage: FC = () => {
+  const [isShownCustomer, setIsShownCustomer] = useState(false);
+  const [isShownVehicle, setIsShownVehicle] = useState(false);
 
-function DemoPage() {
+  const handleClickCustomer = (event: React.MouseEvent<HTMLElement>) => {
+    isShownVehicle ? setIsShownVehicle(false) : null;
+    setIsShownCustomer(current => !current);
+  };
+  const handleClickVehicle = (event: React.MouseEvent<HTMLElement>) => {
+    isShownCustomer ? setIsShownCustomer(false) : null;
+    setIsShownVehicle(current => !current);
+  };
+
   return (
     <>
-<p>demo</p>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', marginRight: '10px' }}>
+          <div style={{ marginRight: '10px' }}>
+            <Button variant="contained" onClick={handleClickCustomer}>
+              New Customer
+            </Button>
+          </div>
+          <div style={{ marginRight: '10px' }}>
+            <Button variant="contained" onClick={handleClickVehicle}>
+              New Vehicle
+            </Button>
+          </div>
+        </div>
+        <div>
+          {isShownCustomer && <NewCustomerForm />}
+          {isShownVehicle && <NewVehicleForm />}
+        </div>
+      </div>
     </>
   );
-}
+};
 
 export default DemoPage;
