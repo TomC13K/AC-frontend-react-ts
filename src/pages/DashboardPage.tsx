@@ -40,14 +40,14 @@ const Container = styled.div`
   flex-direction: row;
   font-weight: 500;
   color: white;
-  height: 100%;
+  height: fit-content;
   width: 100%;
   justify-content: space-between;
 `;
 
 const MenuLayoutContainer = styled.div`
   width: 20em;
-  height:100%;
+  height: 100%;
 `;
 
 const ContentLayoutContainer = styled.div`
